@@ -72,7 +72,7 @@ namespace AddressBook
         {
             Console.WriteLine("Please enter the city name to find person: ");
             string ecity = Console.ReadLine();
-            List<Contacts> contacts = records.FindAll(x => (x.city == ecity));
+            List<Contacts> contacts = records.FindAll(x => (x.City == ecity));
 
             //Checking for Availability
             if (contacts.Count == 0)
