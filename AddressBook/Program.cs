@@ -2,55 +2,63 @@
 
 namespace AddressBook
 {
-       class Contacts
-        {
-            public string firstName { get; set; }
-            public string lastName { get; set; }
-            public string address { get; set; }
-            public string city { get; set; }
-            public string state { get; set; }
-            public string email { get; set; }
-            public int zip { get; set; }
-            public long phoneNumber { get; set; }
+    class Contacts
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Email { get; set; }
+        public int Zip { get; set; }
+        public long PhoneNumber { get; set; }
 
-        }
-        class Program
+    }
+    class Program
+    {
+        static void Main(string[] args)
         {
-            static void Main(string[] args)
+            Console.WriteLine("Welcome to AddressBook problem");
+
+            Records records = new Records();
+
+
+
+            //Infinite Loop
+            while (true)
             {
-                Console.WriteLine("Welcome to AddressBook problem");
+                Console.WriteLine("\nEnter 1 to Add person in AddressBook");
+                Console.WriteLine("Enter 2 to Display");
+                Console.WriteLine("Enter 3 to search the person by city");
+                Console.WriteLine("Enter 4 to search the person by State");
+                int choice = int.Parse(Console.ReadLine());
 
-                Records records = new Records();
-
-
-
-                //Infinite Loop
-                while (true)
+                switch (choice)
                 {
-                    Console.WriteLine("\nEnter 1 to Add person in AddressBook");
-                    Console.WriteLine("Enter 2 to Display");
-                    int choice = int.Parse(Console.ReadLine());
-
-                    switch (choice)
-                    {
-                        case 1:
-                            records.AddRecord();
-                            break;
-                        case 2:
-                            records.ToPrint();
-                            break;
-                        default:
-                            Console.WriteLine("Pleasee select valid input");
-                            break;
-
-                    }
+                    case 1:
+                        records.AddRecord();
+                        break;
+                    case 2:
+                        records.ToPrint();
+                        break;
+                    case 3:
+                        records.CheckByCity();
+                        break;
+                    case 4:
+                        records.CheckByState();
+                        break;
+                    default:
+                        Console.WriteLine("Pleasee select valid input");
+                        break;
 
                 }
+
             }
         }
-    
+    }
+
 }
 
 
-    
+
 
